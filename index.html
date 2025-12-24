@@ -47,7 +47,10 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26175d9 (Letgo)
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -226,7 +229,10 @@
 
         /* Responsive design */
         @media (max-width: 768px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26175d9 (Letgo)
             .wrap,
             .agreement-section {
                 padding: 25px 20px;
@@ -274,6 +280,7 @@
             </div> -->
 
             <div class="wrap animated fadeIn">
+<<<<<<< HEAD
                 <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
                     $(endif)>
                     <input type="hidden" name="dst" value="$(link-orig)" />
@@ -286,6 +293,16 @@
                         hotspot service $(if trial == 'yes')<br />Free trial available, <a
                             href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click
                             here</a>.$(endif)
+=======
+                <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                    <input type="hidden" name="dst" value="$(link-orig)" />
+                    <input type="hidden" name="popup" value="true" />
+                    
+                    <img src="img/logoRAM.png" alt="RAM Hospital" class="logo">
+
+                    <p class="info $(if error)alert$(endif)">
+                        $(if error == "")กรุณาเข้าสู่ระบบเพื่อใช้บริการอินเทอร์เน็ต<br>Please log in to use the internet hotspot service $(if trial == 'yes')<br />Free trial available, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)
+>>>>>>> 26175d9 (Letgo)
                         $(endif)
                         $(if error)$(error)$(endif)
                     </p>
@@ -311,6 +328,7 @@
                 <div class="agreement-title">ข้อตกลง / Agreement</div>
                 <div class="agreement-content">
                     <li>
+<<<<<<< HEAD
                         <p>ระบบ นี้จัดทำขึ้นเพื่อเป็นการปฏิบัติตาม พ.ร.บ. ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์
                             พ.ศ.๒๕๖๐
                             และประกาศกระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร เรื่องหลักเกณฑ์การเก็บรักษาข้อมูลจราจร
@@ -332,6 +350,21 @@
                     </li>
                     <p><span class="highlight">Your usage information will be recorded on the system in compliance with
                             laws.</span></p>
+=======
+                        <p>ระบบ นี้จัดทำขึ้นเพื่อเป็นการปฏิบัติตาม พ.ร.บ. ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ.๒๕๖๐
+และประกาศกระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร เรื่องหลักเกณฑ์การเก็บรักษาข้อมูลจราจร
+ทางคอมพิวเตอร์ของผู้ให้บริการ พ.ศ.๒๕๖๐</p>
+                    </li>
+                    
+                    <p><span class="highlight">The Computer Crime Act B.E.2560 enforces the existence of this system.</span></p>
+                    
+                      <li><p>กรุณาป้อนชื่อผู้ใช้ในช่อง Username รหัสผ่านในช่อง Password และ VouChers เพื่อแสดง
+ยืนยันตัวบุคคลก่อนใช้งานเครื่อข่ายอินเตอร์เน็ต</p></li>
+                    <p><span class="highlight">Please identify and aunthenticate yourself by entering your VouChers usersname and password.</span></p>
+                    
+                    <li><p>ระบบจะบันทึกข้อมูลการใช้งานของท่านเพื่อประโยชน์ตาม พ.ร.บฯ</p></li>
+                    <p><span class="highlight">Your usage information will be recorded on the system in compliance with laws.</span></p>
+>>>>>>> 26175d9 (Letgo)
                 </div>
             </div>
 
@@ -340,4 +373,8 @@
 
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 26175d9 (Letgo)
