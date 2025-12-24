@@ -9,7 +9,7 @@
     <link rel="icon" href="img/logoRAM.png" sizes="64x64" type="image/png">
     <title>RAM Hospital - Internet Hotspot</title>
     <style>
-        :root {
+           :root {
             --blue: #0038c6;
             --light-blue: #26a9e0;
             --gray: #e6e7e8;
@@ -42,13 +42,13 @@
             box-sizing: border-box;
         }
 
-
         body {
             font-family: 'IBM Plex Sans Thai', sans-serif;
             background: white;
             min-height: 100vh;
         }
 
+        /* Main container */
         .ie-fixMinHeight {
             padding: 40px 20px;
         }
@@ -74,13 +74,13 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
+        /* Logo */
         .logo {
             width: 100%;
             max-width: 200px;
@@ -89,16 +89,17 @@
             display: block;
         }
 
+        /* Info messages */
         .info {
             background: #e3f2fd;
-            color: var(--blue);
-            padding: 11.7px;
+            color: var(--ligh-blue);
+            padding: 15px;
             border-radius: 8px;
             margin-bottom: 25px;
             text-align: center;
             font-size: 14px;
             line-height: 1.6;
-            border-left: 4px solid var(--blue);
+            border-left: 4px solid var(--ligh-blue);
         }
 
         .info.alert {
@@ -108,10 +109,13 @@
         }
 
         .info a {
-            color: var(--blue);
+            color: var(--ligh-blue);
             text-decoration: underline;
             font-weight: 600;
         }
+        .info:empty {
+    display: none;
+}
 
         .info.bt {
             background: transparent;
@@ -122,6 +126,45 @@
             margin-bottom: 0;
         }
 
+        /* Agreement Link */
+        .agreement-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .agreement-link input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--blue);
+            flex-shrink: 0;
+        }
+
+        .agreement-link label {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .agreement-link a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+            display: inline;
+        }
+
+        .agreement-link a:hover {
+            border-bottom-color: var(--blue);
+        }
+
+        /* Form elements */
         form label {
             display: block;
             position: relative;
@@ -152,7 +195,7 @@
         form input[type="text"]:focus,
         form input[type="password"]:focus {
             outline: none;
-            border-color: var(--light-blue);
+            border-color: var(--blue);
             background: #fff;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
@@ -194,50 +237,102 @@
             box-shadow: none;
         }
 
-        /* Agreement Box */
-        .agreement-box {
-            margin-top: 25px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .agreement-header {
-            background: var(--blue);
-            color: #fff;
-            padding: 15px 20px;
-            font-weight: bold;
-            font-size: 16px;
-            text-align: center;
-        }
-
-        .agreement-scroll {
-            height: 300px;
-            overflow-y: scroll;
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
             padding: 20px;
-            background: #f8f9fa;
-            border-bottom: 2px solid #e0e0e0;
+            animation: fadeIn 0.3s ease-in-out;
         }
 
-        .agreement-scroll::-webkit-scrollbar {
-            width: 10px;
+        .modal-overlay.show {
+            display: flex;
         }
 
-        .agreement-scroll::-webkit-scrollbar-track {
+        /* Modal Content */
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            background: var(--blue);
+            color: var(--gray);
+            padding: 20px 30px;
+            border-radius: 12px 12px 0 0;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .modal-body {
+            padding: 30px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-body::-webkit-scrollbar-track {
             background: #f1f1f1;
             border-radius: 10px;
         }
 
-        .agreement-scroll::-webkit-scrollbar-thumb {
+        .modal-body::-webkit-scrollbar-thumb {
             background: #888;
             border-radius: 10px;
         }
 
-        .agreement-scroll::-webkit-scrollbar-thumb:hover {
+        .modal-body::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
 
+        .modal-logo-container {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .modal-logo {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+        }
+
         .agreement-content {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
             line-height: 1.8;
         }
 
@@ -253,52 +348,44 @@
         }
 
         .agreement-content .highlight {
-            color: var(--blue);
+            color: #0066cc;
             font-weight: bold;
         }
 
-        .agreement-checkbox-container {
-            padding: 20px;
-            background: white;
+        .modal-footer {
+            padding: 20px 30px;
+            border-top: 1px solid #e0e0e0;
             display: flex;
-            align-items: center;
-            gap: 10px;
+            gap: 15px;
+            justify-content: center;
         }
 
-        .agreement-checkbox-container input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
+        .modal-btn {
+            padding: 12px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
-            accent-color: var(--blue);
-            flex-shrink: 0;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .agreement-checkbox-container input[type="checkbox"]:disabled {
-            cursor: not-allowed;
-            opacity: 0.5;
+        .btn-close {
+            background: transparent;
+            border: 2px solid ;
+            color: #f44336;
         }
 
-        .agreement-checkbox-container label {
-            margin: 0;
-            font-size: 14px;
-            color: #333;
-            cursor: pointer;
+        .btn-close:hover {
+            background: #f44336;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
         }
 
-        .agreement-checkbox-container label.disabled {
-            color: #999;
-            cursor: not-allowed;
-        }
-
-        .scroll-indicator {
-            text-align: center;
-            padding: 10px;
-            background: white;
-            color: black;
-            font-size: 13px;
-            border-top: 1px solid var(--blue);
-        }
-
+        /* Responsive design */
         @media (max-width: 768px) {
             .wrap {
                 padding: 25px 20px;
@@ -312,14 +399,67 @@
                 max-width: 100%;
             }
 
-            .agreement-scroll {
-                height: 250px;
+            .modal-content {
+                max-height: 90vh;
+            }
+
+            .modal-header {
+                padding: 15px 20px;
+                font-size: 18px;
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+
+            .checkbox-container {
+                padding: 15px;
+            }
+
+            .modal-footer {
+                padding: 15px 20px;
+            }
+
+            .modal-btn {
+                width: 100%;
             }
         }
     </style>
 </head>
 
 <body>
+
+    <!-- Agreement Modal -->
+    <div class="modal-overlay" id="agreementModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                ข้อตกลง / Agreement
+            </div>
+            <div class="modal-body">
+                <div class="agreement-content">
+                    <li>
+                        <p>ระบบนี้จัดทำขึ้นเพื่อเป็นการปฏิบัติตาม พ.ร.บ. <br>ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ.๒๕๖๐
+<br>และประกาศกระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร <br>เรื่องหลักเกณฑ์การเก็บรักษาข้อมูลจราจร<br>
+ทางคอมพิวเตอร์ของผู้ให้บริการ พ.ศ.๒๕๖๐</p>
+                    </li>
+                    
+                    <p><span class="highlight">The Computer Crime Act B.E.2560 enforces the existence of this system.</span></p>
+                    
+                    <li><p>กรุณาป้อนชื่อผู้ใช้ในช่อง Username รหัสผ่านในช่อง Password และ Vouchers เพื่อแสดง
+ยืนยันตัวบุคคลก่อนใช้งานเครือข่ายอินเตอร์เน็ต</p></li>
+                    <p><span class="highlight">Please identify and authenticate yourself by entering your Vouchers username and password.</span></p>
+                    
+                    <li><p>ระบบจะบันทึกข้อมูลการใช้งานของท่านเพื่อประโยชน์ตาม พ.ร.บ.ฯ</p></li>
+                    <p><span class="highlight">Your usage information will be recorded on the system in compliance with laws.</span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn btn-close" onclick="closeModal()">ปิด / Close</button>
+            </div>
+        </div>
+    </div>
+        <a href="index.html">แบบที่ 1</a>
+
     <!-- $(if chap-id) -->
     <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
         <input type="hidden" name="username" />
@@ -338,23 +478,22 @@
         }
     </script>
     <!-- $(endif) -->
-     <a href="index2.html">แบบที่ 2</a>
+
     <div class="ie-fixMinHeight">
         <div class="main">
             <div class="wrap animated fadeIn">
-                <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
-                    $(endif)>
+                <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
                     <input type="hidden" name="dst" value="$(link-orig)" />
                     <input type="hidden" name="popup" value="true" />
-
+                    
                     <img src="img/logoRAM.png" alt="RAM Hospital" class="logo">
-<!-- 
-                               $(if error == "invalid username or password") -->
+
+                   <!-- $(if error == "invalid username or password")
 <p class="info alert">
     ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง กรุณาตรวจสอบและลองใหม่อีกครั้ง<br>
     Incorrect username or password. Please try again.
 </p>
-<!--$(endif) -->
+$(endif) -->
 
 
                     <label>
@@ -367,91 +506,45 @@
                         <input name="password" type="password" placeholder="รหัสผ่าน / Password" />
                     </label>
 
-                    <!-- Agreement Box -->
-                    <div class="agreement-box">
-                        <div class="agreement-header">
-                            ข้อตกลงและเงื่อนไข / Terms and Conditions
-                        </div>
-                        <div class="agreement-scroll" id="agreementScroll" onscroll="checkScroll()">
-                            <div class="agreement-content">
-                                <li>
-                                    <p>ระบบนี้จัดทำขึ้นเพื่อเป็นการปฏิบัติตาม พ.ร.บ.
-                                        <br>ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ.๒๕๖๐
-                                        <br>และประกาศกระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร
-                                        <br>เรื่องหลักเกณฑ์การเก็บรักษาข้อมูลจราจร<br>
-                                        ทางคอมพิวเตอร์ของผู้ให้บริการ พ.ศ.๒๕๖๐
-                                    </p>
-                                </li>
-
-                                <p><span class="highlight">The Computer Crime Act B.E.2560 enforces the existence of
-                                        this system.</span></p>
-
-                                <li>
-                                    <p>กรุณาป้อนชื่อผู้ใช้ในช่อง Username รหัสผ่านในช่อง Password และ Vouchers เพื่อแสดง
-                                        ยืนยันตัวบุคคลก่อนใช้งานเครือข่ายอินเตอร์เน็ต</p>
-                                </li>
-                                <p><span class="highlight">Please identify and authenticate yourself by entering your
-                                        Vouchers username and password.</span></p>
-
-                                <li>
-                                    <p>ระบบจะบันทึกข้อมูลการใช้งานของท่านเพื่อประโยชน์ตาม พ.ร.บ.ฯ</p>
-                                </li>
-                                <p><span class="highlight">Your usage information will be recorded on the system in
-                                        compliance with laws.</span></p>
-                            </div>
-                        </div>
-                        <div class="scroll-indicator" id="scrollIndicator">
-                            ⬇ กรุณาเลื่อนอ่านข้อตกลงจนจบ / Please scroll to read all terms
-                        </div>
-                        <div class="agreement-checkbox-container">
-                            <input type="checkbox" id="agreementCheckbox" onchange="toggleLoginButton()" disabled>
-                            <label for="agreementCheckbox" id="checkboxLabel" class="disabled">
-                                ฉันได้อ่านและยอมรับข้อตกลงและเงื่อนไข /<br>
-                                 I have read and agree to the terms and
-                                conditions
-                            </label>
-                        </div>
-                    </div>
-
                     <input type="submit" value="Connect" id="submitBtn" disabled />
+
+                    <div class="agreement-link">
+                        <input type="checkbox" id="agreementCheckbox" onchange="toggleLoginButton()">
+                        <label for="agreementCheckbox">
+                            <a onclick="openModal(); event.stopPropagation();"> ข้อตกลงและเงื่อนไข / Terms and Conditions</a>
+                        </label>
+                    </div>
 
                 </form>
                 <p class="info bt">Powered by Computer Ram Hospital</p>
+                
             </div>
-       
-
         </div>
     </div>
-        
+
     <script>
-        let hasScrolledToBottom = false;
-
-        function checkScroll() {
-            const scrollBox = document.getElementById('agreementScroll');
-            const checkbox = document.getElementById('agreementCheckbox');
-            const checkboxLabel = document.getElementById('checkboxLabel');
-            const scrollIndicator = document.getElementById('scrollIndicator');
-
-            // Check if scrolled to bottom (with 10px tolerance)
-            const isAtBottom = scrollBox.scrollHeight - scrollBox.scrollTop <= scrollBox.clientHeight + 10;
-
-            if (isAtBottom && !hasScrolledToBottom) {
-                hasScrolledToBottom = true;
-                checkbox.disabled = false;
-                checkboxLabel.classList.remove('disabled');
-                scrollIndicator.style.display = 'none';
-            }
+        // Open Modal
+        function openModal() {
+            document.getElementById('agreementModal').classList.add('show');
         }
 
+        // Close Modal
+        function closeModal() {
+            document.getElementById('agreementModal').classList.remove('show');
+        }
+
+        // Toggle Login Button
         function toggleLoginButton() {
             const checkbox = document.getElementById('agreementCheckbox');
             const submitBtn = document.getElementById('submitBtn');
             submitBtn.disabled = !checkbox.checked;
         }
 
-        // Check initial scroll position on load
-        window.addEventListener('load', function () {
-            checkScroll();
+        // Close modal when clicking outside
+        document.getElementById('agreementModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
         });
     </script>
 

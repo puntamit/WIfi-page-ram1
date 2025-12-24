@@ -6,45 +6,21 @@
     <meta http-equiv="pragma" content="no-cache" />
     <meta http-equiv="expires" content="-1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="img/logoRAM.png" sizes="64x64" type="image/png">
     <title>RAM Hospital - Internet Hotspot</title>
     <style>
-        :root {
+        :root{
             --blue: #0038c6;
-            --light-blue: #26a9e0;
+            --ligh-blue: #26a9e0;
             --gray: #e6e7e8;
         }
-
-        @font-face {
-            font-family: 'IBM Plex Sans Thai';
-            src: url('../fonts/IBMPlexSansThai-Regular.woff2') format('woff2');
-            font-weight: 400;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'IBM Plex Sans Thai';
-            src: url('../fonts/IBMPlexSansThai-Medium.woff2') format('woff2');
-            font-weight: 500;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'IBM Plex Sans Thai';
-            src: url('../fonts/IBMPlexSansThai-Bold.woff2') format('woff2');
-            font-weight: 700;
-            font-style: normal;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-
         body {
-            font-family: 'IBM Plex Sans Thai', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: white;
             min-height: 100vh;
         }
@@ -74,7 +50,6 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -92,7 +67,7 @@
         .info {
             background: #e3f2fd;
             color: var(--blue);
-            padding: 11.7px;
+            padding: 15px;
             border-radius: 8px;
             margin-bottom: 25px;
             text-align: center;
@@ -293,7 +268,7 @@
         .scroll-indicator {
             text-align: center;
             padding: 10px;
-            background: white;
+            background: var(--light-blue);
             color: black;
             font-size: 13px;
             border-top: 1px solid var(--blue);
@@ -320,7 +295,7 @@
 </head>
 
 <body>
-    <!-- $(if chap-id) -->
+
     <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
         <input type="hidden" name="username" />
         <input type="hidden" name="password" />
@@ -337,25 +312,19 @@
             return false;
         }
     </script>
-    <!-- $(endif) -->
-     <a href="index2.html">แบบที่ 2</a>
+
     <div class="ie-fixMinHeight">
         <div class="main">
             <div class="wrap animated fadeIn">
-                <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
-                    $(endif)>
+                <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
                     <input type="hidden" name="dst" value="$(link-orig)" />
                     <input type="hidden" name="popup" value="true" />
-
+                    
                     <img src="img/logoRAM.png" alt="RAM Hospital" class="logo">
-<!-- 
-                               $(if error == "invalid username or password") -->
-<p class="info alert">
-    ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง กรุณาตรวจสอบและลองใหม่อีกครั้ง<br>
-    Incorrect username or password. Please try again.
-</p>
-<!--$(endif) -->
 
+                    <p class="info $(if error)alert$(endif)">
+                        กรุณาเข้าสู่ระบบเพื่อใช้บริการอินเทอร์เน็ต<br>Please log in to use the internet hotspot service
+                    </p>
 
                     <label>
                         <img class="ico" src="img/user.svg" alt="#" />
@@ -370,34 +339,24 @@
                     <!-- Agreement Box -->
                     <div class="agreement-box">
                         <div class="agreement-header">
-                            ข้อตกลงและเงื่อนไข / Terms and Conditions
+                             ข้อตกลงและเงื่อนไข / Terms and Conditions
                         </div>
                         <div class="agreement-scroll" id="agreementScroll" onscroll="checkScroll()">
                             <div class="agreement-content">
                                 <li>
-                                    <p>ระบบนี้จัดทำขึ้นเพื่อเป็นการปฏิบัติตาม พ.ร.บ.
-                                        <br>ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ.๒๕๖๐
-                                        <br>และประกาศกระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร
-                                        <br>เรื่องหลักเกณฑ์การเก็บรักษาข้อมูลจราจร<br>
-                                        ทางคอมพิวเตอร์ของผู้ให้บริการ พ.ศ.๒๕๖๐
-                                    </p>
+                                    <p>ระบบนี้จัดทำขึ้นเพื่อเป็นการปฏิบัติตาม พ.ร.บ. <br>ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ.๒๕๖๐
+                                    <br>และประกาศกระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร <br>เรื่องหลักเกณฑ์การเก็บรักษาข้อมูลจราจร<br>
+                                    ทางคอมพิวเตอร์ของผู้ให้บริการ พ.ศ.๒๕๖๐</p>
                                 </li>
-
-                                <p><span class="highlight">The Computer Crime Act B.E.2560 enforces the existence of
-                                        this system.</span></p>
-
-                                <li>
-                                    <p>กรุณาป้อนชื่อผู้ใช้ในช่อง Username รหัสผ่านในช่อง Password และ Vouchers เพื่อแสดง
-                                        ยืนยันตัวบุคคลก่อนใช้งานเครือข่ายอินเตอร์เน็ต</p>
-                                </li>
-                                <p><span class="highlight">Please identify and authenticate yourself by entering your
-                                        Vouchers username and password.</span></p>
-
-                                <li>
-                                    <p>ระบบจะบันทึกข้อมูลการใช้งานของท่านเพื่อประโยชน์ตาม พ.ร.บ.ฯ</p>
-                                </li>
-                                <p><span class="highlight">Your usage information will be recorded on the system in
-                                        compliance with laws.</span></p>
+                                
+                                <p><span class="highlight">The Computer Crime Act B.E.2560 enforces the existence of this system.</span></p>
+                                
+                                <li><p>กรุณาป้อนชื่อผู้ใช้ในช่อง Username รหัสผ่านในช่อง Password และ Vouchers เพื่อแสดง
+                                ยืนยันตัวบุคคลก่อนใช้งานเครือข่ายอินเตอร์เน็ต</p></li>
+                                <p><span class="highlight">Please identify and authenticate yourself by entering your Vouchers username and password.</span></p>
+                                
+                                <li><p>ระบบจะบันทึกข้อมูลการใช้งานของท่านเพื่อประโยชน์ตาม พ.ร.บ.ฯ</p></li>
+                                <p><span class="highlight">Your usage information will be recorded on the system in compliance with laws.</span></p>
                             </div>
                         </div>
                         <div class="scroll-indicator" id="scrollIndicator">
@@ -406,9 +365,7 @@
                         <div class="agreement-checkbox-container">
                             <input type="checkbox" id="agreementCheckbox" onchange="toggleLoginButton()" disabled>
                             <label for="agreementCheckbox" id="checkboxLabel" class="disabled">
-                                ฉันได้อ่านและยอมรับข้อตกลงและเงื่อนไข /<br>
-                                 I have read and agree to the terms and
-                                conditions
+                                ฉันได้อ่านและยอมรับข้อตกลงและเงื่อนไข / I have read and agree to the terms and conditions
                             </label>
                         </div>
                     </div>
@@ -416,13 +373,11 @@
                     <input type="submit" value="Connect" id="submitBtn" disabled />
 
                 </form>
-                <p class="info bt">Powered by Computer Ram Hospital</p>
+                <p class="info bt">Powered by MikroTik RouterOS</p>
             </div>
-       
-
         </div>
     </div>
-        
+
     <script>
         let hasScrolledToBottom = false;
 
@@ -431,10 +386,10 @@
             const checkbox = document.getElementById('agreementCheckbox');
             const checkboxLabel = document.getElementById('checkboxLabel');
             const scrollIndicator = document.getElementById('scrollIndicator');
-
+            
             // Check if scrolled to bottom (with 10px tolerance)
             const isAtBottom = scrollBox.scrollHeight - scrollBox.scrollTop <= scrollBox.clientHeight + 10;
-
+            
             if (isAtBottom && !hasScrolledToBottom) {
                 hasScrolledToBottom = true;
                 checkbox.disabled = false;
@@ -450,7 +405,7 @@
         }
 
         // Check initial scroll position on load
-        window.addEventListener('load', function () {
+        window.addEventListener('load', function() {
             checkScroll();
         });
     </script>
