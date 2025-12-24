@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Tahoma', 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%);
+            /* background: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%); */
             min-height: 100vh;
         }
 
@@ -21,9 +21,9 @@
             background: linear-gradient(to right, #fff 0%, #fff 100%);
             padding: 15px 30px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
         }
 
         .wifi-logo {
@@ -62,7 +62,7 @@
 
         .checkmark {
             position: absolute;
-            top: -15px;
+            /* top: -15px; */
             right: -15px;
             background: #0066cc;
             width: 70px;
@@ -94,6 +94,7 @@
             max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
+            background: white;
         }
 
         .login-card {
@@ -146,7 +147,7 @@
             background: white;
         }
 
-        .wifi-info {
+        /* .wifi-info {
             background: linear-gradient(135deg, #4488ff 0%, #5599ff 100%);
             color: white;
             padding: 15px 25px;
@@ -156,7 +157,7 @@
             gap: 15px;
             margin-bottom: 30px;
             box-shadow: 0 4px 15px rgba(68, 136, 255, 0.3);
-        }
+        } */
 
         .phone-icon {
             width: 80px;
@@ -174,7 +175,7 @@
             background: white;
             border-radius: 8px;
             padding: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            /* box-shadow: 0 4px 15px rgba(0,0,0,0.1); */
         }
 
         .agreement-title {
@@ -186,7 +187,7 @@
             font-weight: bold;
             font-size: 18px;
             margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(255, 215, 0, 0.3);
+                
         }
 
         .agreement-content {
@@ -231,18 +232,20 @@
             }
         }
     </style>
+
+
 </head>
 <body>
     <div class="header">
         <div class="wifi-logo">
             <div class="wifi-icon">
                 <div class="free-badge">FREE</div>
-                <div class="checkmark"></div>
+                <!-- <div class="checkmark"></div> -->
                 <span>Wi<span style="color: #ffd700;">Fi</span></span>
             </div>
         </div>
         <div class="hospital-logo">
-            <img src="logoRAM.png" alt="RAM Hospital" style="height: 70px;">
+            <img src="logoRAM.png" alt="RAM Hospital" width="120px" style="height: 80px;">
         </div>
     </div>
 
@@ -261,26 +264,30 @@
                 <input type="submit" name="accept" class="login-btn" value="Login">
             </form>
         </div>
-
-        <div class="wifi-info">
+        
+        <!-- <div class="wifi-info">
             <div>
                 <strong style="font-size: 18px;">เชื่อมต่อ WiFi SSID: RAM-HOSP_WiFi</strong>
             </div>
             <div class="phone-icon">📱</div>
-        </div>
+        </div> -->
 
         <div class="agreement-section">
             <div class="agreement-title">ข้อตกลง / Agreement</div>
             <div class="agreement-content">
-                <p>• ระบบนี้ มีซอฟต์แวร์เพื่อบันทึกผู้ที่ผิดกฏหมาย เช่น พ.ร.บ. อาชญากรรมทางคอมพิวเตอร์แห่งชาติพุทธศักราช พ.ศ.2550 และมีซอฟต์แวร์อื่นๆเพื่อการควบคุมและกำกับดูแลตามกฎหมายอื่นๆทางอาญา พ.ศ.2550</p>
+                <li><p>ระบบ นี้จัดทำขึ้นเพื่อเป็นการปฏิบัติตาม พ.ร.บ. ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ.๒๕๖๐
+และประกาศกระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร เรื่องหลักเกณฑ์การเก็บรักษาข้อมูลจราจร
+ทางคอมพิวเตอร์ของผู้ให้บริการ พ.ศ.๒๕๖๐
+</p></li>
                 
-                <p><span class="highlight">This Computer Crime Act B.E.2550 enforces the existence of this system.</span></p>
+                <p><span class="highlight">The Computer Crime Act B.E.2560 enforces the existence of this system.</span></p>
                 
-                <p>• กรุณาป้อนข้อมูลใน Username คำสั่งในนี้ของคุณ Password และ Vouchers เชื่อมต่อตัวเองยืนยันตัวตนในระบบขณะเชื่อมต่ออินเตอร์เน็ต เช่น FB / LINE / Instagram / Youtube</p>
+                <li><p>กรุณาป้อนชื่อผู้ใช้ในช่อง Username รหัสผ่านในช่อง Password และ VouChers เพื่อแสดง
+ยืนยันตัวบุคคลก่อนใช้งานเครื่อข่ายอินเตอร์เน็ต</p></li> 
                 
-                <p><span class="highlight">Please Identify and authenticate yourself by entering your Vouchers username and password.</span></p>
+                <p><span class="highlight">Please identify and aunthenticate yourself by entering your VouChers usersname and password.</span></p>
                 
-                <p>• ระบบบันทึกข้อมูลที่คุณใช้งานอินเตอร์เน็ตบนระบบนี้ตามที่กฎหมายกำหนด พ.ร.บ.ฯ</p>
+                <p>ระบบจะบันทึกข้อมูลการใช้งานของท่านเพื่อประโยชน์ตาม พ.ร.บฯ</p>
                 
                 <p><span class="highlight">Your usage information will be recorded on the system in compliance with laws.</span></p>
             </div>
