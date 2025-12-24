@@ -1,9 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAM Hospital WiFi</title>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAM Hospital - Internet Hotspot</title>
     <style>
         * {
             margin: 0;
@@ -12,188 +15,179 @@
         }
 
         body {
-            font-family: 'Tahoma', 'Arial', sans-serif;
-            /* background: linear-gradient(to bottom, #e8e8e8 0%, #f5f5f5 100%); */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+            background: white;
             min-height: 100vh;
         }
 
-        .header {
-            background: linear-gradient(to right, #fff 0%, #fff 100%);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+        /* Main container */
+        .ie-fixMinHeight {
+            padding: 40px 20px;
         }
 
-        .wifi-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .main {
+            max-width: 480px;
+            margin: 0 auto;
         }
 
-        .wifi-icon {
-            position: relative;
-            width: 120px;
-            height: 80px;
-            background: white;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            font-weight: bold;
-            color: #0066cc;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-        }
-
-        .free-badge {
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            background: #0066cc;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-
-        .checkmark {
-            position: absolute;
-            /* top: -15px; */
-            right: -15px;
-            background: #0066cc;
-            width: 70px;
-            height: 70px;
-            clip-path: polygon(0 0, 100% 0, 100% 100%);
-            transform: rotate(45deg);
-        }
-
-        .checkmark::after {
-            content: '✓';
-            position: absolute;
-            top: 5px;
-            right: 8px;
-            color: white;
-            font-size: 24px;
-            transform: rotate(-45deg);
-            font-weight: bold;
-        }
-
-        .hospital-logo {
-            text-align: center;
-        }
-
-        .hospital-plus {
-            color: #00b8d4;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            background: white;
-        }
-
-        .login-card {
-            background: white;
-            border-radius: 8px;
+        .wrap {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 12px;
             padding: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            max-width: 450px;
-            margin-left: auto;
-            margin-right: auto;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
 
-        .form-group {
+        .animated.fadeIn {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo */
+        .logo {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto 30px;
+            display: block;
+        }
+
+        /* Info messages */
+        .info {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.6;
+            border-left: 4px solid #1976d2;
+        }
+
+        .info.alert {
+            background: #ffebee;
+            color: #c62828;
+            border-left-color: #c62828;
+        }
+
+        .info a {
+            color: #1565c0;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .info.bt {
+            background: transparent;
+            color: #888;
+            border: none;
+            font-size: 12px;
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+
+        /* Form elements */
+        form label {
+            display: block;
+            position: relative;
             margin-bottom: 20px;
         }
 
-        .login-btn {
+        form label .ico {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            opacity: 0.5;
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
             width: 100%;
-            padding: 12px;
-            background: linear-gradient(to right, #5599ff, #4488ff);
+            padding: 14px 15px 14px 50px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        form input[type="text"]:focus,
+        form input[type="password"]:focus {
+            outline: none;
+            border-color: #667eea;
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        form input[type="text"]::placeholder,
+        form input[type="password"]::placeholder {
+            color: #999;
+        }
+
+        form input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
         }
 
-        .login-btn:hover {
-            background: linear-gradient(to right, #4488ff, #3377ee);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(68, 136, 255, 0.4);
+        form input[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
         }
 
-        .form-group input[type="text"],
-        .form-group input[type="password"] {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-            background: #f9f9f9;
+        form input[type="submit"]:active {
+            transform: translateY(0);
         }
 
-        .form-group input:focus {
-            outline: none;
-            border-color: #5599ff;
-            background: white;
-        }
-
-        /* .wifi-info {
-            background: linear-gradient(135deg, #4488ff 0%, #5599ff 100%);
-            color: white;
-            padding: 15px 25px;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(68, 136, 255, 0.3);
-        } */
-
-        .phone-icon {
-            width: 80px;
-            height: 80px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-        }
-
+        /* Agreement Section */
         .agreement-section {
             background: white;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 30px;
-            /* box-shadow: 0 4px 15px rgba(0,0,0,0.1); */
+            margin-top: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
         }
 
         .agreement-title {
             background: linear-gradient(to right, #ffd700, #ffed4e);
             color: #0033cc;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 8px;
             display: inline-block;
             font-weight: bold;
             font-size: 18px;
             margin-bottom: 20px;
-                
+            box-shadow: 0 3px 8px rgba(255, 215, 0, 0.3);
         }
 
         .agreement-content {
             background: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
+            padding: 25px;
+            border-radius: 8px;
             line-height: 1.8;
         }
 
@@ -203,102 +197,147 @@
             color: #333;
         }
 
-        .highlight {
+        .agreement-content .highlight {
             color: #0066cc;
             font-weight: bold;
         }
 
-        .footer-bar {
-            background: #0066cc;
-            height: 15px;
-            margin-top: 30px;
-            border-radius: 5px;
+        /* WiFi Banner */
+        .wifi-info-banner {
+            background: linear-gradient(135deg, #4a90e2 0%, #5ba3f5 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px auto;
+            max-width: 500px;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+            font-weight: 600;
+            font-size: 16px;
         }
 
+        .wifi-info-banner::before {
+            content: '📱';
+            font-size: 28px;
+        }
+
+        /* Responsive design */
         @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                gap: 15px;
+
+            .wrap,
+            .agreement-section {
+                padding: 25px 20px;
             }
 
-            .wifi-info {
-                flex-direction: column;
-                border-radius: 20px;
-                text-align: center;
+            .ie-fixMinHeight {
+                padding: 20px 15px;
             }
 
-            .login-card {
-                padding: 25px;
+            .main {
+                max-width: 100%;
             }
         }
     </style>
-
-
 </head>
+
 <body>
-    <div class="header">
-        <div class="wifi-logo">
-            <div class="wifi-icon">
-                <div class="free-badge">FREE</div>
-                <!-- <div class="checkmark"></div> -->
-                <span>Wi<span style="color: #ffd700;">Fi</span></span>
-            </div>
-        </div>
-        <div class="hospital-logo">
-            <img src="logoRAM.png" alt="RAM Hospital" width="120px" style="height: 80px;">
-        </div>
-    </div>
 
-    <div class="container">
-        <div class="login-card">
-            
-            <form name="login_form" method="post" action="$PORTAL_ACTION$">
-                <div class="form-group">
-                    <input type="text" name="auth_user" placeholder="ชื่อผู้ใช้ / username">
-                </div>
-                <div class="form-group">
-                    <input type="password" name="auth_pass" placeholder="รหัสผ่าน / password">
-                </div>
-                <input name="redirurl" type="hidden" value="$PORTAL_REDIRURL$">
-                <input name="zone" type="hidden" value="$PORTAL_ZONE$">
-                <input type="submit" name="accept" class="login-btn" value="Login">
-            </form>
-        </div>
-        
-        <!-- <div class="wifi-info">
-            <div>
-                <strong style="font-size: 18px;">เชื่อมต่อ WiFi SSID: RAM-HOSP_WiFi</strong>
-            </div>
-            <div class="phone-icon">📱</div>
-        </div> -->
 
-        <div class="agreement-section">
-            <div class="agreement-title">ข้อตกลง / Agreement</div>
-            <div class="agreement-content">
-                <li><p>ระบบ นี้จัดทำขึ้นเพื่อเป็นการปฏิบัติตาม พ.ร.บ. ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ.๒๕๖๐
-และประกาศกระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร เรื่องหลักเกณฑ์การเก็บรักษาข้อมูลจราจร
-ทางคอมพิวเตอร์ของผู้ให้บริการ พ.ศ.๒๕๖๐
-</p></li>
-                
-                <p><span class="highlight">The Computer Crime Act B.E.2560 enforces the existence of this system.</span></p>
-                
-                <li><p>กรุณาป้อนชื่อผู้ใช้ในช่อง Username รหัสผ่านในช่อง Password และ VouChers เพื่อแสดง
-ยืนยันตัวบุคคลก่อนใช้งานเครื่อข่ายอินเตอร์เน็ต</p></li> 
-                
-                <p><span class="highlight">Please identify and aunthenticate yourself by entering your VouChers usersname and password.</span></p>
-                
-                <p>ระบบจะบันทึกข้อมูลการใช้งานของท่านเพื่อประโยชน์ตาม พ.ร.บฯ</p>
-                
-                <p><span class="highlight">Your usage information will be recorded on the system in compliance with laws.</span></p>
-            </div>
-        </div>
 
-        <div class="footer-bar"></div>
-    </div>
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="https://www.ram-hosp.co.th/th" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
 
+    <script src="/md5.js"></script>
     <script>
-        // Form will submit to portal action automatically
-        // No additional JavaScript needed for basic functionality
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
     </script>
+    $(endif)
+
+    <div class="ie-fixMinHeight">
+        <div class="main">
+            <!-- WiFi SSID Banner -->
+            <!-- <div class="wifi-info-banner">
+                เชื่อมต่อ WiFi: RAM-HOSP_WiFi
+            </div> -->
+
+            <div class="wrap animated fadeIn">
+                <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
+                    $(endif)>
+                    <input type="hidden" name="dst" value="$(link-orig)" />
+                    <input type="hidden" name="popup" value="true" />
+
+                    <img src="img/logoRAM.png" alt="RAM Hospital" class="logo">
+
+                    <p class="info $(if error)alert$(endif)">
+                        $(if error == "")กรุณาเข้าสู่ระบบเพื่อใช้บริการอินเทอร์เน็ต<br>Please log in to use the internet
+                        hotspot service $(if trial == 'yes')<br />Free trial available, <a
+                            href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click
+                            here</a>.$(endif)
+                        $(endif)
+                        $(if error)$(error)$(endif)
+                    </p>
+
+                    <label>
+                        <img class="ico" src="img/user.svg" alt="#" />
+                        <input name="username" type="text" value="$(username)" placeholder="ชื่อผู้ใช้ / Username" />
+                    </label>
+
+                    <label>
+                        <img class="ico" src="img/password.svg" alt="#" />
+                        <input name="password" type="password" placeholder="รหัสผ่าน / Password" />
+                    </label>
+
+                    <input type="submit" value="Connect" />
+
+                </form>
+                <p class="info bt">Powered by MikroTik RouterOS</p>
+            </div>
+
+            <!-- Agreement Section -->
+            <div class="agreement-section animated fadeIn">
+                <div class="agreement-title">ข้อตกลง / Agreement</div>
+                <div class="agreement-content">
+                    <li>
+                        <p>ระบบ นี้จัดทำขึ้นเพื่อเป็นการปฏิบัติตาม พ.ร.บ. ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์
+                            พ.ศ.๒๕๖๐
+                            และประกาศกระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร เรื่องหลักเกณฑ์การเก็บรักษาข้อมูลจราจร
+                            ทางคอมพิวเตอร์ของผู้ให้บริการ พ.ศ.๒๕๖๐</p>
+                    </li>
+
+                    <p><span class="highlight">The Computer Crime Act B.E.2560 enforces the existence of this
+                            system.</span></p>
+
+                    <li>
+                        <p>กรุณาป้อนชื่อผู้ใช้ในช่อง Username รหัสผ่านในช่อง Password และ VouChers เพื่อแสดง
+                            ยืนยันตัวบุคคลก่อนใช้งานเครื่อข่ายอินเตอร์เน็ต</p>
+                    </li>
+                    <p><span class="highlight">Please identify and aunthenticate yourself by entering your VouChers
+                            usersname and password.</span></p>
+
+                    <li>
+                        <p>ระบบจะบันทึกข้อมูลการใช้งานของท่านเพื่อประโยชน์ตาม พ.ร.บฯ</p>
+                    </li>
+                    <p><span class="highlight">Your usage information will be recorded on the system in compliance with
+                            laws.</span></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
 </body>
+
 </html>
