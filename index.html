@@ -8,6 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RAM Hospital - Internet Hotspot</title>
     <style>
+        :root{
+            --blue: #0038c6;
+            --ligh-blue: #26a9e0;
+            --gray: #e6e7e8;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -61,14 +66,14 @@
 
         .info {
             background: #e3f2fd;
-            color: #1976d2;
+            color: var(--blue);
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 25px;
             text-align: center;
             font-size: 14px;
             line-height: 1.6;
-            border-left: 4px solid #1976d2;
+            border-left: 4px solid var(--blue);
         }
 
         .info.alert {
@@ -78,7 +83,7 @@
         }
 
         .info a {
-            color: #1565c0;
+            color: var(--blue);
             text-decoration: underline;
             font-weight: 600;
         }
@@ -122,7 +127,7 @@
         form input[type="text"]:focus,
         form input[type="password"]:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: var(--light-blue);
             background: #fff;
             box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
         }
@@ -135,7 +140,7 @@
         form input[type="submit"] {
             width: 100%;
             padding: 15px;
-            background: linear-gradient(135deg, #021fa1 0%, #559bd4 100%);
+            background: var(--blue);
             color: white;
             border: none;
             border-radius: 8px;
@@ -173,7 +178,7 @@
         }
 
         .agreement-header {
-            background: linear-gradient(to right, #0033cc, #0033cc);
+            background: var(--blue);
             color: #fff;
             padding: 15px 20px;
             font-weight: bold;
@@ -223,7 +228,7 @@
         }
 
         .agreement-content .highlight {
-            color: #0066cc;
+            color: var(--blue);
             font-weight: bold;
         }
 
@@ -239,7 +244,7 @@
             width: 20px;
             height: 20px;
             cursor: pointer;
-            accent-color: #021fa1;
+            accent-color: var(--blue);
             flex-shrink: 0;
         }
 
@@ -263,10 +268,10 @@
         .scroll-indicator {
             text-align: center;
             padding: 10px;
-            background: #fff3cd;
-            color: #856404;
+            background: var(--light-blue);
+            color: black;
             font-size: 13px;
-            border-top: 1px solid #ffc107;
+            border-top: 1px solid var(--blue);
         }
 
         @media (max-width: 768px) {
@@ -334,7 +339,7 @@
                     <!-- Agreement Box -->
                     <div class="agreement-box">
                         <div class="agreement-header">
-                            📋 ข้อตกลงและเงื่อนไข / Terms and Conditions
+                             ข้อตกลงและเงื่อนไข / Terms and Conditions
                         </div>
                         <div class="agreement-scroll" id="agreementScroll" onscroll="checkScroll()">
                             <div class="agreement-content">
@@ -355,7 +360,7 @@
                             </div>
                         </div>
                         <div class="scroll-indicator" id="scrollIndicator">
-                            ⬇️ กรุณาเลื่อนอ่านข้อตกลงจนจบ / Please scroll to read all terms
+                            ⬇ กรุณาเลื่อนอ่านข้อตกลงจนจบ / Please scroll to read all terms
                         </div>
                         <div class="agreement-checkbox-container">
                             <input type="checkbox" id="agreementCheckbox" onchange="toggleLoginButton()" disabled>
