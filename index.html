@@ -6,12 +6,20 @@
     <meta http-equiv="pragma" content="no-cache" />
     <meta http-equiv="expires" content="-1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
     <link rel="icon" href="img/logoRAM.png" sizes="64x64" type="image/png">
     <title>RAM Hospital - Internet Hotspot</title>
     <style>
         :root {
             --blue: #0038c6;
             --light-blue: #26a9e0;
+=======
+    <title>RAM Hospital - Internet Hotspot</title>
+    <style>
+           :root {
+            --blue: #0038c6;
+            --ligh-blue: #26a9e0;
+>>>>>>> bc5ca53395e22bdf360246853d4991f608259b82
             --gray: #e6e7e8;
         }
 
@@ -49,6 +57,10 @@
             min-height: 100vh;
         }
 
+<<<<<<< HEAD
+=======
+        /* Main container */
+>>>>>>> bc5ca53395e22bdf360246853d4991f608259b82
         .ie-fixMinHeight {
             padding: 40px 20px;
         }
@@ -74,13 +86,20 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc5ca53395e22bdf360246853d4991f608259b82
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
+<<<<<<< HEAD
+=======
+        /* Logo */
+>>>>>>> bc5ca53395e22bdf360246853d4991f608259b82
         .logo {
             width: 100%;
             max-width: 200px;
@@ -89,16 +108,28 @@
             display: block;
         }
 
+<<<<<<< HEAD
         .info {
             background: #e3f2fd;
             color: var(--blue);
             padding: 11.7px;
+=======
+        /* Info messages */
+        .info {
+            background: #e3f2fd;
+            color: var(--ligh-blue);
+            padding: 15px;
+>>>>>>> bc5ca53395e22bdf360246853d4991f608259b82
             border-radius: 8px;
             margin-bottom: 25px;
             text-align: center;
             font-size: 14px;
             line-height: 1.6;
+<<<<<<< HEAD
             border-left: 4px solid var(--blue);
+=======
+            border-left: 4px solid var(--ligh-blue);
+>>>>>>> bc5ca53395e22bdf360246853d4991f608259b82
         }
 
         .info.alert {
@@ -108,10 +139,20 @@
         }
 
         .info a {
+<<<<<<< HEAD
             color: var(--blue);
             text-decoration: underline;
             font-weight: 600;
         }
+=======
+            color: var(--ligh-blue);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        .info:empty {
+    display: none;
+}
+>>>>>>> bc5ca53395e22bdf360246853d4991f608259b82
 
         .info.bt {
             background: transparent;
@@ -122,6 +163,7 @@
             margin-bottom: 0;
         }
 
+<<<<<<< HEAD
         form label {
             display: block;
             position: relative;
@@ -238,6 +280,239 @@
         }
 
         .agreement-content {
+=======
+        /* Agreement Link */
+        .agreement-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .agreement-link input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--blue);
+            flex-shrink: 0;
+        }
+
+        .agreement-link label {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .agreement-link a {
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
+            display: inline;
+        }
+
+        .agreement-link a:hover {
+            border-bottom-color: var(--blue);
+        }
+
+        /* Form elements */
+        form label {
+            display: block;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        form label .ico {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            opacity: 0.5;
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 14px 15px 14px 50px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        form input[type="text"]:focus,
+        form input[type="password"]:focus {
+            outline: none;
+            border-color: var(--blue);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        form input[type="text"]::placeholder,
+        form input[type="password"]::placeholder {
+            color: #999;
+        }
+
+        form input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            background: var(--blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+
+        form input[type="submit"]:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        form input[type="submit"]:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        form input[type="submit"]:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Password toggle button */
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .toggle-password:hover {
+            opacity: 1;
+        }
+
+        .toggle-password svg {
+            width: 20px;
+            height: 20px;
+            fill: #666;
+        }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            padding: 20px;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-header {
+            background: var(--blue);
+            color: var(--gray);
+            padding: 20px 30px;
+            border-radius: 12px 12px 0 0;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+        }
+
+        .modal-body {
+            padding: 30px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-body::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        .modal-logo-container {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .modal-logo {
+            width: 100%;
+            max-width: 180px;
+            height: auto;
+        }
+
+        .agreement-content {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+>>>>>>> bc5ca53395e22bdf360246853d4991f608259b82
             line-height: 1.8;
         }
 
@@ -253,6 +528,7 @@
         }
 
         .agreement-content .highlight {
+<<<<<<< HEAD
             color: var(--blue);
             font-weight: bold;
         }
@@ -297,8 +573,46 @@
             color: black;
             font-size: 13px;
             border-top: 1px solid var(--blue);
+=======
+            color: #0066cc;
+            font-weight: bold;
         }
 
+        .modal-footer {
+            padding: 20px 30px;
+            border-top: 1px solid #e0e0e0;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+>>>>>>> bc5ca53395e22bdf360246853d4991f608259b82
+        }
+
+        .modal-btn {
+            padding: 12px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-close {
+            background: transparent;
+            border: 2px solid ;
+            color: #f44336;
+        }
+
+        .btn-close:hover {
+            background: #f44336;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 67, 54, 0.4);
+        }
+
+        /* Responsive design */
         @media (max-width: 768px) {
             .wrap {
                 padding: 25px 20px;
@@ -312,14 +626,74 @@
                 max-width: 100%;
             }
 
+<<<<<<< HEAD
             .agreement-scroll {
                 height: 250px;
+=======
+            .modal-content {
+                max-height: 90vh;
+            }
+
+            .modal-header {
+                padding: 15px 20px;
+                font-size: 18px;
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+
+            .checkbox-container {
+                padding: 15px;
+            }
+
+            .modal-footer {
+                padding: 15px 20px;
+            }
+
+            .modal-btn {
+                width: 100%;
+>>>>>>> bc5ca53395e22bdf360246853d4991f608259b82
             }
         }
     </style>
 </head>
 
 <body>
+<<<<<<< HEAD
+=======
+
+    <!-- Agreement Modal -->
+    <div class="modal-overlay" id="agreementModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                ข้อตกลง / Agreement
+            </div>
+            <div class="modal-body">
+                <div class="agreement-content">
+                    <li>
+                        <p>ระบบนี้จัดทำขึ้นเพื่อเป็นการปฏิบัติตาม พ.ร.บ. <br>ว่าด้วยการกระทำความผิดเกี่ยวกับคอมพิวเตอร์ พ.ศ.๒๕๖๐
+<br>และประกาศกระทรวงเทคโนโลยีสารสนเทศและการสื่อสาร <br>เรื่องหลักเกณฑ์การเก็บรักษาข้อมูลจราจร<br>
+ทางคอมพิวเตอร์ของผู้ให้บริการ พ.ศ.๒๕๖๐</p>
+                    </li>
+
+                    <p><span class="highlight">The Computer Crime Act B.E.2560 enforces the existence of this system.</span></p>
+
+                    <li><p>กรุณาป้อนชื่อผู้ใช้ในช่อง Username รหัสผ่านในช่อง Password และ Vouchers เพื่อแสดง
+ยืนยันตัวบุคคลก่อนใช้งานเครือข่ายอินเตอร์เน็ต</p></li>
+                    <p><span class="highlight">Please identify and authenticate yourself by entering your Vouchers username and password.</span></p>
+
+                    <li><p>ระบบจะบันทึกข้อมูลการใช้งานของท่านเพื่อประโยชน์ตาม พ.ร.บ.ฯ</p></li>
+                    <p><span class="highlight">Your usage information will be recorded on the system in compliance with laws.</span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn btn-close" onclick="closeModal()">ปิด / Close</button>
+            </div>
+        </div>
+    </div>
+
+>>>>>>> bc5ca53395e22bdf360246853d4991f608259b82
     <!-- $(if chap-id) -->
     <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
         <input type="hidden" name="username" />
@@ -327,9 +701,72 @@
         <input type="hidden" name="dst" value="https://www.ram-hosp.co.th/th" />
         <input type="hidden" name="popup" value="true" />
     </form>
+<<<<<<< HEAD
+=======
 
     <script src="/md5.js"></script>
     <script>
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+    </script>
+    <!-- $(endif) -->
+
+    <div class="ie-fixMinHeight">
+        <div class="main">
+            <div class="wrap animated fadeIn">
+                <form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                    <input type="hidden" name="dst" value="$(link-orig)" />
+                    <input type="hidden" name="popup" value="true" />
+
+                    <img src="img/logoRAM.png" alt="RAM Hospital" class="logo">
+
+                   <!-- $(if error == "invalid username or password")
+<p class="info alert">
+    ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง กรุณาตรวจสอบและลองใหม่อีกครั้ง<br>
+    Incorrect username or password. Please try again.
+</p>
+$(endif) -->
+
+
+                    <label>
+                        <img class="ico" src="img/user.svg" alt="#" />
+                        <input name="username" type="text" value="$(username)" placeholder="ชื่อผู้ใช้ / Username" />
+                    </label>
+
+                    <label>
+                        <img class="ico" src="img/password.svg" alt="#" />
+                        <input name="password" id="passwordInput" type="password" placeholder="รหัสผ่าน / Password" />
+                        <button type="button" class="toggle-password" onclick="togglePassword()">
+                            <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+                            </svg>
+                        </button>
+                    </label>
+
+                    <input type="submit" value="Connect" id="submitBtn" disabled />
+
+                    <div class="agreement-link">
+                        <input type="checkbox" id="agreementCheckbox" onchange="toggleLoginButton()">
+                        <label for="agreementCheckbox">
+                            <a onclick="openModal(); event.stopPropagation();"> ข้อตกลงและเงื่อนไข / Terms and Conditions</a>
+                        </label>
+                    </div>
+
+                </form>
+                <p class="info bt">Powered by Computer Ram Hospital</p>
+
+            </div>
+        </div>
+    </div>
+>>>>>>> bc5ca53395e22bdf360246853d4991f608259b82
+
+    <script src="/md5.js"></script>
+    <script>
+<<<<<<< HEAD
         function doLogin() {
             document.sendin.username.value = document.login.username.value;
             document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
@@ -454,6 +891,46 @@
             checkScroll();
         });
     </script>
+=======
+        // Toggle Password Visibility
+        function togglePassword() {
+            const passwordInput = document.getElementById('passwordInput');
+            const eyeIcon = document.getElementById('eyeIcon');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.innerHTML = '<path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/>';
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.innerHTML = '<path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>';
+            }
+        }
+
+        // Open Modal
+        function openModal() {
+            document.getElementById('agreementModal').classList.add('show');
+        }
+
+        // Close Modal
+        function closeModal() {
+            document.getElementById('agreementModal').classList.remove('show');
+        }
+
+        // Toggle Login Button
+        function toggleLoginButton() {
+            const checkbox = document.getElementById('agreementCheckbox');
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = !checkbox.checked;
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('agreementModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+>>>>>>> bc5ca53395e22bdf360246853d4991f608259b82
 
 </body>
 
